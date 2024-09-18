@@ -54,7 +54,7 @@ extension ViewController {
         redSlider.minimumTrackTintColor = .red
         redSlider.maximumTrackTintColor = .gray
         redSlider.value = 0
-   
+        
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 1
         greenSlider.minimumTrackTintColor = .green
