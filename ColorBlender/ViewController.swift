@@ -3,6 +3,7 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    //MARK: - IB Outlets
     @IBOutlet weak var coloredView: UIView!
     
     @IBOutlet weak var redValueLabel: UILabel!
@@ -13,7 +14,7 @@ final class ViewController: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     
-    
+    //MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         coloredView.layer.cornerRadius = 18
@@ -21,6 +22,7 @@ final class ViewController: UIViewController {
         setupValueLabels()
     }
     
+    //MARK: - IB Actions
     @IBAction func redSliderDidSlide() {
         coloredView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
         redValueLabel.text = String(format: "%.2F", redSlider.value)
@@ -36,14 +38,15 @@ final class ViewController: UIViewController {
         blueValueLabel.text = String(format: "%.2F", blueSlider.value)
     }
     
+    //MARK: - Privet methods
     private func setupValueLabels (){
         redValueLabel.text = String(format: "%.2F", redSlider.value)
         greenValueLabel.text = String(format: "%.2F", greenSlider.value)
         blueValueLabel.text = String(format: "%.2F", blueSlider.value)
     }
-
 }
 
+//MARK: - Setup UI
 extension ViewController {
     private func setupSliders() {
         redSlider.minimumValue = 0
@@ -52,7 +55,6 @@ extension ViewController {
         redSlider.maximumTrackTintColor = .gray
         redSlider.value = 0
    
-        
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 1
         greenSlider.minimumTrackTintColor = .green
