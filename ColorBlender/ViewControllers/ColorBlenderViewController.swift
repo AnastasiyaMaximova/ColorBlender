@@ -127,17 +127,18 @@ extension ColorBlenderViewController: UITextFieldDelegate {
             )
             return
         }
+        
         switch textField {
         case redTextField:
-            redColor = CGFloat(Double(textField.text!)!)
+            redColor = CGFloat(value)
             setupSliders()
             setupValueLabels()
         case greenTextField:
-            greenColor = CGFloat(Double(textField.text!)!)
+            greenColor = CGFloat(value)
             setupSliders()
             setupValueLabels()
         default:
-            blueColor = CGFloat(Double(textField.text!)!)
+            blueColor = CGFloat(value)
             setupSliders()
             setupValueLabels()
         }
